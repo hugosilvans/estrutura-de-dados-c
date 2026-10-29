@@ -4,9 +4,9 @@
 // Definindo a estrutura de um ITEM da lista ENCADEADA
 
 typedef struct Item {
-    
+
     int Chave;
-    struct Item * Proximo;
+    struct Item *Proximo;
 
 } Item;
 
@@ -14,10 +14,10 @@ typedef struct Item {
 
 int main() {
 
-    Item * A = (Item *) malloc (sizeof(Item));
-    Item * B = (Item *) malloc (sizeof(Item));
-    Item * C = (Item *) malloc (sizeof(Item));
-    Item * D = (Item *) malloc (sizeof(Item));
+    Item *A = (Item *)malloc(sizeof(Item));
+    Item *B = (Item *)malloc(sizeof(Item));
+    Item *C = (Item *)malloc(sizeof(Item));
+    Item *D = (Item *)malloc(sizeof(Item));
 
     A->Chave = 17;
     B->Chave = 29;
@@ -27,7 +27,7 @@ int main() {
     A->Proximo = NULL;
     B->Proximo = NULL;
     C->Proximo = NULL;
-    D->Proximo = NULL; 
+    D->Proximo = NULL;
 
     // Alguns testes (printf's)
 
@@ -46,20 +46,19 @@ int main() {
 
     printf("Lista:\n\n");
 
-    Item * X = A; // X aponta para o 1° elemento
+    Item *X = A;                       // X aponta para o 1° elemento
     printf("%X \t %d\n", X, X->Chave); // 17
 
-    X = X->Proximo; // do 1° para o 2° elemento
+    X = X->Proximo;                    // do 1° para o 2° elemento
     printf("%X \t %d\n", X, X->Chave); // 29
 
-    X = X->Proximo; // do 2° para o 3° elemento
+    X = X->Proximo;                    // do 2° para o 3° elemento
     printf("%X \t %d\n", X, X->Chave); // 41
 
-    X = X->Proximo; // do 3° para o 4° elemento
+    X = X->Proximo;                    // do 3° para o 4° elemento
     printf("%X \t %d\n", X, X->Chave); // 97 (último elemento)
 
     X = X->Proximo;
-    if (X == NULL) printf("Final da lista!!!");
-
-
+    if (X == NULL)
+        printf("Final da lista!!!");
 }

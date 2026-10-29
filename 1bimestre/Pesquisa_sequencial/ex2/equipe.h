@@ -14,19 +14,18 @@ typedef struct {
     int V;
     int E;
     int D;
-    int GP; // Gols Pró
-    int GC; // Gols Contra
-    int SG; // Saldo de Gols SG = GP - GS
+    int GP;               // Gols Pró
+    int GC;               // Gols Contra
+    int SG;               // Saldo de Gols SG = GP - GS
     float Aproveitamento; // % de pontos conquistados
 } Time;
 
-Time * LerDados(char * NomeArquivo); //retornar vetor da equipe
+Time *LerDados(char *NomeArquivo); // retornar vetor da equipe
 
-void InsertionSort(int * V, int N);
+void InsertionSort(Time *V, int N);
 
-int getPontos(Time * T, int Pos);
+int getPontos(Time *T, int Pos);
 
-float getAproveitamento(Time * T, char * Nome);
+float getAproveitamento(Time *T, char *Nome);
 
 #endif
-

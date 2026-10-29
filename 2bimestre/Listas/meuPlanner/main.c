@@ -4,7 +4,7 @@
 
 #include "tarefa.h"
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
 
     Tarefa T1 = {"Entrega do relatório de BD", "Rafael Souza", FEITO, 1.00, 4};
     Tarefa T2 = {"Revisão do código do sistema", "Carlos Henrique", FEITO, 1.00, 5};
@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
     Tarefa T9 = {"Apresentação para o cliente", "Bianca Torres", FEITO, 1.00, 5};
     Tarefa T10 = {"Correção de bugs críticos", "João Victor", EM_ANDAMENTO, 0.30, 5};
 
-    Lista * Planner = CriarLista(200);
+    Lista *Planner = CriarLista(200);
     AdicionarTarefa(Planner, T1);
     AdicionarTarefa(Planner, T2);
     AdicionarTarefa(Planner, T3);
@@ -28,16 +28,15 @@ int main(int argc, char* argv[]) {
     AdicionarTarefa(Planner, T8);
     AdicionarTarefa(Planner, T9);
     AdicionarTarefa(Planner, T10);
-    //printf("%X\n", Planner);
+    // printf("%X\n", Planner);
 
-    for(int i = 0; i < Planner->Tamanho; i++){
+    for (int i = 0; i < Planner->Tamanho; i++) {
         printf("%d\t", i);
         printf("%s\n", Planner->Dados[i].Titulo);
     }
 
     GerarHTMLTabela(Planner, "planner.html");
 
-    //DestruirLista(Planner);
-    //printf("%X\n", Planner);
-
+    // DestruirLista(Planner);
+    // printf("%X\n", Planner);
 }

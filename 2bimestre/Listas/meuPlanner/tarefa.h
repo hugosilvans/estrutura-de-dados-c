@@ -9,8 +9,7 @@
 #define EM_ANDAMENTO 1
 #define FEITO 2
 
-
-//Definindo a estrutura de um elemento da lista
+// Definindo a estrutura de um elemento da lista
 typedef struct {
 
     char Titulo[TAM_TITULO];
@@ -21,16 +20,16 @@ typedef struct {
 
 } Tarefa;
 
-//Definindo a estrutura da lista de tarefas
+// Definindo a estrutura da lista de tarefas
 typedef struct {
-    Tarefa * Dados;
+    Tarefa *Dados;
     int Capacidade;
     int Tamanho;
 } Lista;
 
-Lista * CriarLista(int C);
-void DestruirLista(Lista * L);
-void AdicionarTarefa(Lista * L, Tarefa T);
+Lista *CriarLista(int C);
+void DestruirLista(Lista *L);
+void AdicionarTarefa(Lista *L, Tarefa T);
 void GerarHTMLTabela(Lista *Lista, char *CaminhoArquivo);
 
 #endif

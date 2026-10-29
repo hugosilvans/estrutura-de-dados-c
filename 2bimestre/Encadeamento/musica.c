@@ -4,9 +4,9 @@
 
 #include "musica.h"
 
-Item * criarItem(char * Titulo, char * Autor, int Ano){
+Item *criarItem(char *Titulo, char *Autor, int Ano) {
 
-    Item * X = (Item *) malloc(sizeof(Item));
+    Item *X = (Item *)malloc(sizeof(Item));
     if (X == NULL) {
         printf("ERRO: nao foi possivel alocar memoria para o item.\n");
     }
@@ -20,37 +20,35 @@ Item * criarItem(char * Titulo, char * Autor, int Ano){
     return X;
 }
 
-void exibirInicio(Lista * L){
+void exibirInicio(Lista *L) {
 
-    Item * Atual = L->Inicio;
-    for(int i = 0; i < L->Tamanho; i++){
+    Item *Atual = L->Inicio;
+    for (int i = 0; i < L->Tamanho; i++) {
         printf("%d \t %s \n", i + 1, Atual->Titulo);
         Atual = Atual->Posterior;
     }
 
     printf("\n");
+}
 
-}    
+void exibirFinal(Lista *L) {
 
-void exibirFinal(Lista * L){
-
-    Item * Atual = L->Fim;
-    for(int i = 0; i < L->Tamanho; i++){
+    Item *Atual = L->Fim;
+    for (int i = 0; i < L->Tamanho; i++) {
         printf("%d \t %s \n", i + 1, Atual->Titulo);
         Atual = Atual->Anterior;
     }
 
     printf("\n");
-
 }
 
-void exibirMusicas(Lista * L, int Ano){
+void exibirMusicas(Lista *L, int Ano) {
 
-    Item * Atual = L->Inicio;
+    Item *Atual = L->Inicio;
 
-    for(int i = 0; i < L->Tamanho; i++){
+    for (int i = 0; i < L->Tamanho; i++) {
 
-        if(Atual->Ano == Ano){
+        if (Atual->Ano == Ano) {
             printf("%d \t %s \n", i + 1, Atual->Titulo);
         }
         Atual = Atual->Posterior;

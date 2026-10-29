@@ -4,13 +4,13 @@
 
 #include "musica.h"
 
-int main(){
+int main() {
 
-    Item * D = criarItem("Aquarela", "Toquinho", 1983);
-    Item * E = criarItem("Romaria", "Renato Teixeira", 1978);
-    Item * F = criarItem("Eu nasci ha dez mil anos atras", "Raul Seixas", 1976);
-    Item * G = criarItem("Calice", "Chico Buarque e Gilberto Gil", 1978);
-    Item * H = criarItem("Tempo Perdido", "Renato Russo", 1986);
+    Item *D = criarItem("Aquarela", "Toquinho", 1983);
+    Item *E = criarItem("Romaria", "Renato Teixeira", 1978);
+    Item *F = criarItem("Eu nasci ha dez mil anos atras", "Raul Seixas", 1976);
+    Item *G = criarItem("Calice", "Chico Buarque e Gilberto Gil", 1978);
+    Item *H = criarItem("Tempo Perdido", "Renato Russo", 1986);
 
     // Construindo o encadeamento
 
@@ -29,18 +29,16 @@ int main(){
     H->Anterior = G;
     H->Posterior = NULL;
 
-   // Criando uma Lista
+    // Criando uma Lista
 
-   Lista *  PlayList = (Lista *) malloc(sizeof(Lista));
-   if (PlayList == NULL) {
+    Lista *PlayList = (Lista *)malloc(sizeof(Lista));
+    if (PlayList == NULL) {
         exit(1);
-   }
+    }
 
     PlayList->Tamanho = 5;
     PlayList->Inicio = D;
     PlayList->Fim = H;
 
-exibirMusicas(PlayList, 1978);
-
-
-}   
+    exibirMusicas(PlayList, 1978);
+}

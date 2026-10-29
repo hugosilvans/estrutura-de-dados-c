@@ -4,9 +4,9 @@
 // Definindo a estrutura de um ITEM da lista ENCADEADA
 
 typedef struct Item {
-    
+
     int Chave;
-    struct Item * Proximo;
+    struct Item *Proximo;
 
 } Item;
 
@@ -14,10 +14,10 @@ typedef struct Item {
 
 int main() {
 
-    Item * A = (Item *) malloc (sizeof(Item));
-    Item * B = (Item *) malloc (sizeof(Item));
-    Item * C = (Item *) malloc (sizeof(Item));
-    Item * D = (Item *) malloc (sizeof(Item));
+    Item *A = (Item *)malloc(sizeof(Item));
+    Item *B = (Item *)malloc(sizeof(Item));
+    Item *C = (Item *)malloc(sizeof(Item));
+    Item *D = (Item *)malloc(sizeof(Item));
 
     A->Chave = 17;
     B->Chave = 29;
@@ -27,7 +27,7 @@ int main() {
     A->Proximo = NULL;
     B->Proximo = NULL;
     C->Proximo = NULL;
-    D->Proximo = NULL; 
+    D->Proximo = NULL;
 
     // Alguns testes (printf's)
 
@@ -46,14 +46,7 @@ int main() {
 
     printf("\nLista:\n\n");
 
-    
-
-    for( Item * X = A; X != NULL; X = X->Proximo) {
+    for (Item *X = A; X != NULL; X = X->Proximo) {
         printf("%X \t %d\n", X, X->Chave);
     }
-
-
-
-
-
 }

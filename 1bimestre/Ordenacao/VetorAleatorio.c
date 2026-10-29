@@ -4,14 +4,14 @@
 
 #define TAMANHO 200000
 
-int main(){
+int main() {
 
     int Soma = 0;
 
     srand(time(NULL));
     clock_t T0 = clock();
 
-    for(int i = 0; i < TAMANHO; i++) V[i] {
+    for (int i = 0; i < TAMANHO; i++) {
         int temp = rand() % 1000;
         printf("%d\n", temp);
         Soma = Soma + temp;
@@ -25,6 +25,5 @@ int main(){
 
     // Observação:
 
-    //rand(): gera um número pseudo-aleátorio
-
+    // rand(): gera um número pseudo-aleátorio
 }

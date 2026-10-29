@@ -3,10 +3,10 @@
 
 #include "pilha.h"
 
-Item * CriarItem(int Chave) {
+Item *CriarItem(int Chave) {
 
-    Item * I = (Item *) malloc(sizeof(Item));
-    if (I == NULL){
+    Item *I = (Item *)malloc(sizeof(Item));
+    if (I == NULL) {
         printf("ERRO, erro de memoria\n");
         return NULL;
     }
@@ -17,10 +17,10 @@ Item * CriarItem(int Chave) {
     return I;
 }
 
-Pilha * CriarPilha() {
+Pilha *CriarPilha() {
 
-    Pilha * P = (Pilha *) malloc(sizeof(Pilha));
-    if (P == NULL){
+    Pilha *P = (Pilha *)malloc(sizeof(Pilha));
+    if (P == NULL) {
         printf("ERRO, erro de memoria\n");
         return NULL;
     }
@@ -29,13 +29,13 @@ Pilha * CriarPilha() {
     P->Topo = NULL;
 
     return P;
-
 }
 
-void empilhar(Pilha * P, Item * I){
+/* A pilha passa a referenciar o item recebido. O topo é o último a entrar (LIFO). */
+void empilhar(Pilha *P, Item *I) {
+    if (!P || !I)
+        return;
     I->Anterior = P->Topo;
     P->Topo = I;
     P->Tamanho++;
 }
-
-

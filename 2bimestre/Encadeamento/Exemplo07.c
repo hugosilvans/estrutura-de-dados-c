@@ -4,26 +4,26 @@
 // Definindo a estrutura de um ITEM da lista ENCADEADA
 
 typedef struct Item {
-    
+
     int Chave;
-    struct Item * Proximo;
+    struct Item *Proximo;
 
 } Item;
 
-Item * CriarItem(int Chave);
+Item *CriarItem(int Chave);
 
-void ExibirLista(Item * Inicio); // Para lista não circular
-void InserirItem(Item * Inicio, Item * I, int Posicao);
-void ExcluirItem(Item * Inicio, int Posicao);
+void ExibirLista(Item *Inicio); // Para lista não circular
+void InserirItem(Item *Inicio, Item *I, int Posicao);
+void ExcluirItem(Item *Inicio, int Posicao);
 
 // Bloco principal
 
 int main() {
 
-    Item * A = CriarItem(17);
-    Item * B = CriarItem(29);
-    Item * C = CriarItem(41);
-    Item * D = CriarItem(97);
+    Item *A = CriarItem(17);
+    Item *B = CriarItem(29);
+    Item *C = CriarItem(41);
+    Item *D = CriarItem(97);
 
     // Lista A, B, C, D
 
@@ -35,7 +35,7 @@ int main() {
 
     // Inserir o item P, cuja chave é 67, logo após C.
 
-    Item * P = CriarItem(67);
+    Item *P = CriarItem(67);
     P->Proximo = D;
     C->Proximo = P;
     ExibirLista(A);
@@ -45,25 +45,22 @@ int main() {
     A->Proximo = C; // ou A->Proximo = B->Proximo;
     free(B);
     ExibirLista(A);
-
 }
 
-Item * CriarItem(int Chave) {
+Item *CriarItem(int Chave) {
 
-    Item * X = (Item *) malloc(sizeof(Item));
+    Item *X = (Item *)malloc(sizeof(Item));
     X->Chave = Chave;
     X->Proximo = NULL;
     return X;
-
 }
 
-void ExibirLista(Item * Inicio) {
+void ExibirLista(Item *Inicio) {
 
-    Item * X = Inicio;
+    Item *X = Inicio;
 
-    for( int i = 0; X != NULL; i++, X = X->Proximo) {
+    for (int i = 0; X != NULL; i++, X = X->Proximo) {
         printf("%d\t", X->Chave);
     }
     printf("\n");
-
 }

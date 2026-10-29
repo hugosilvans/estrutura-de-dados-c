@@ -4,18 +4,18 @@
 typedef struct Item {
 
     int Chave;
-    struct Item * Anterior;
+    struct Item *Anterior;
 
 } Item;
 
-Item * CriarItem(int Chave);
+Item *CriarItem(int Chave);
 
 typedef struct Pilha {
     int Tamanho;
-    Item * Topo;
+    Item *Topo;
 } Pilha;
 
-Item * CriarItem(int Chave);
-Pilha * CriarPilha();
+Item *CriarItem(int Chave);
+Pilha *CriarPilha();
 
 #endif

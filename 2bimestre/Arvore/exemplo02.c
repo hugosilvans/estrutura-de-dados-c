@@ -6,15 +6,15 @@ typedef struct No {
 
     // Árvore BINÁRIA
 
-    struct No * Esquerda; // 1° Filho
-    struct No * Direita; // 2° Filho
-    
+    struct No *Esquerda; // 1° Filho
+    struct No *Direita;  // 2° Filho
+
 } No;
 
-No * criarNo(char Chave) {
+No *criarNo(char Chave) {
 
-    No * N = (No *) malloc(sizeof(No));
-    if (N == NULL){
+    No *N = (No *)malloc(sizeof(No));
+    if (N == NULL) {
         printf("ERRO: nao ha memoria para o no.\n");
         return NULL;
     }
@@ -27,16 +27,15 @@ No * criarNo(char Chave) {
     return N;
 }
 
-int main(){
-    No * A = criarNo('a');
-    No * B = criarNo('b');
-    No * C = criarNo('c');
-    No * D = criarNo('d');
+int main() {
+    No *A = criarNo('a');
+    No *B = criarNo('b');
+    No *C = criarNo('c');
+    No *D = criarNo('d');
 
     A->Esquerda = B;
     A->Direita = C;
     C->Direita = D;
 
     printf("%c", A->Direita->Direita->Chave);
-
 }

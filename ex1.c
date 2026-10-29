@@ -3,14 +3,14 @@
 #include <string.h>
 
 typedef struct {
-    char Nome[150]; // Gasta + 1 ("\0") = 151 caracteres
-    char Telefone[14]; // 15 caracteres
+    char Nome[150];     // Gasta + 1 ("\0") = 151 caracteres
+    char Telefone[14];  // 15 caracteres
     char Endereco[200]; // 201 caracteres
 } Pessoa;
 
 typedef int inteiro;
 
-int main(int argc, char* argv[]){
+int main(int argc, char *argv[]) {
 
     Pessoa X;
     inteiro n;
@@ -21,4 +21,4 @@ int main(int argc, char* argv[]){
     printf("%s\t%s\t%s\n", X.Nome, X.Endereco, X.Telefone);
 
     return 0;
-} 
+}
